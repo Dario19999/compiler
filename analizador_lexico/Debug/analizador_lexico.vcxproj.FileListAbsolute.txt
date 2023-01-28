@@ -1,0 +1,2 @@
+D:\CUCEI\7mo\Sem Traductores II\analizador_lexico\Debug\analizador_lexico.exe
+D:\CUCEI\7mo\Sem Traductores II\analizador_lexico\Debug\analizador_lexico.pdb
