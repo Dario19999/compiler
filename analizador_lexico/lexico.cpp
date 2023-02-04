@@ -327,8 +327,6 @@ int Lexico::sigSimbolo()
 
 }
 
-
-
 char Lexico::sigCaracter()
 {
 	if (terminado()) return '$';
