@@ -33,7 +33,7 @@ public:
 	static const int WHILE = 20;
 	static const int RETURN = 21;
 	static const int ELSE = 22;
-	static const int PESOS = 23;
+	static const int FIN = 23;
 	static const int OPDIV = 24;
 	static const int OPRESTA = 25;
 	static const int PUNTO = 26;
@@ -47,13 +47,13 @@ class Lexico
 {
 public:
 	string simbolo;
-	int tipo;
+	int estado;
 
 	Lexico(string fuente);
 	Lexico();
 
 	void entrada(string fuente);
-	string tipoAcad(int tipo);
+	string tipoCad(int tipo);
 
 	int sigSimbolo();
 	bool terminado();
@@ -63,7 +63,6 @@ private:
 	int ind;
 	bool continua;
 	char c;
-	int estado;
 	int cont;
 	string aux;
 

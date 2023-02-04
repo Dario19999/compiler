@@ -4,24 +4,32 @@
 #include <wchar.h>
 #include <locale.h>
 #include <stdlib.h>
+#include <fstream>
 #include "lexico.h"
 
 using namespace std;
 
 int main(int argc, char* argv[]) {
+    fstream file;
+    string line;
+    file.open("tokens.txt", ios::in);
 
-    setlocale(LC_ALL, "");
+    if (file.is_open()) {
+        while (!file.eof()) {
+            getline(file, line);
+        }
+        file.close();
+    }
 
-    Lexico lexico("jona 13 2.54 for int + * = || && == ! ; , ( ) { } if while return else / - . % float void ");
-
-    cout << "\t[ANALIZADOR LEXICO]" << endl << endl;
-    cout << "[Simbolo]\t\t[Tipo]" << endl;
+    Lexico lexico(line);
+    cout << "[Simbolo]\t\t[Token]" << endl;
 
     while (lexico.simbolo.compare("$") != 0) {
         lexico.sigSimbolo();
 
-        cout << lexico.simbolo << "\t\t" << lexico.tipoAcad(lexico.tipo) << endl;
+        cout << lexico.simbolo << "\t\t\t" << lexico.tipoCad(lexico.estado) << endl;
     }
+
     cout << "=====================================";
     cin.get();
 

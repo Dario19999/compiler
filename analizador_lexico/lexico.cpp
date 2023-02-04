@@ -11,7 +11,7 @@ Lexico::Lexico()
 	ind = 0;
 }
 
-string Lexico::tipoAcad(int tipo)
+string Lexico::tipoCad(int tipo)
 {
 	string cad = "";
 
@@ -114,7 +114,7 @@ string Lexico::tipoAcad(int tipo)
 		break;
 
 	case SimboloTipo::ASIGNACION:
-		cad = "Operador de Asignaci�n";
+		cad = "Operador de Asignacion";
 		break;
 
 	case SimboloTipo::IF:
@@ -137,8 +137,8 @@ string Lexico::tipoAcad(int tipo)
 		cad = "Palabra Reservada";
 		break;
 
-	case SimboloTipo::PESOS:
-		cad = "Fin de la Entrada";
+	case SimboloTipo::FIN:
+		cad = "Fin de Codigo";
 		break;
 	}
 
@@ -323,109 +323,7 @@ int Lexico::sigSimbolo()
 
 	}
 
-	switch (estado)
-	{
-	case -1:
-		tipo = SimboloTipo::ERROR;
-		break;
-	case 0:
-		tipo = SimboloTipo::IDENTIFICADOR;
-		break;
-	case 1:
-		tipo = SimboloTipo::ENTERO;
-		break;
-	case 2:
-		tipo = SimboloTipo::REAL;
-		break;
-	case 3:
-		tipo = SimboloTipo::FOR;
-		break;
-	case 4:
-		tipo = SimboloTipo::TIPOENTERO;
-		break;
-	case 5:
-		tipo = SimboloTipo::OPSUMA;
-		break;
-	case 6:
-		tipo = SimboloTipo::OPMUL;
-		break;
-	case 7:
-		tipo = SimboloTipo::OPRELAC;
-		break;
-	case 8:
-		tipo = SimboloTipo::OPOR;
-		break;
-	case 9:
-		tipo = SimboloTipo::OPAND;
-		break;
-	case 10:
-		tipo = SimboloTipo::OPNOT;
-		break;
-	case 11:
-		tipo = SimboloTipo::OPIGUALDAD;
-		break;
-	case 12:
-		tipo = SimboloTipo::PUNTOYCOMA;
-		break;
-	case 13:
-		tipo = SimboloTipo::COMA;
-		break;
-	case 14:
-		tipo = SimboloTipo::PARENTABIERTO;
-		break;
-	case 15:
-		tipo = SimboloTipo::PARENTCERRADO;
-		break;
-	case 16:
-		tipo = SimboloTipo::CORCHETEABIERTO;
-		break;
-	case 17:
-		tipo = SimboloTipo::CORCHETECERRADO;
-		break;
-	case 18:
-		tipo = SimboloTipo::ASIGNACION;
-		break;
-	case 19:
-		tipo = SimboloTipo::IF;
-		break;
-	case 20:
-		tipo = SimboloTipo::WHILE;
-		break;
-	case 21:
-		tipo = SimboloTipo::RETURN;
-		break;
-	case 22:
-		tipo = SimboloTipo::ELSE;
-		break;
-	case 23:
-		tipo = SimboloTipo::PESOS;
-		break;
-	case 24:
-		tipo = SimboloTipo::OPDIV;
-		break;
-	case 25:
-		tipo = SimboloTipo::OPRESTA;
-		break;
-	case 26:
-		tipo = SimboloTipo::PUNTO;
-		break;
-	case 27:
-		tipo = SimboloTipo::OPMODULO;
-		break;
-	case 28:
-		tipo = SimboloTipo::TIPOREAL;
-		break;
-	case 29:
-		tipo = SimboloTipo::TIPONULO;
-		break;
-	case 30:
-		tipo = SimboloTipo::DO;
-		break;
-	default:
-		tipo = SimboloTipo::ERROR;
-		break;
-	}
-	return tipo;
+	return estado;
 
 }
 

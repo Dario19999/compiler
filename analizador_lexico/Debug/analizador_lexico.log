@@ -1,2 +1,5 @@
 ﻿  analizador_lexico.cpp
+  lexico.cpp
+D:\CUCEI\7mo\Sem Traductores II\analizador_lexico\lexico.cpp(356,13): warning C4018: '>=': no coinciden signed/unsigned
+  Generando código...
   analizador_lexico.vcxproj -> D:\CUCEI\7mo\Sem Traductores II\analizador_lexico\Debug\analizador_lexico.exe
